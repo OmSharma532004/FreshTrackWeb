@@ -224,6 +224,7 @@ const Dashboard = () => {
   
       <Rightbar />
     </div>
+    
   );
 };
 export default Dashboard;  
