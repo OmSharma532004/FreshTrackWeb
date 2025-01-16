@@ -29,7 +29,7 @@ const Dashboard = () => {
   // Fetch warehouse data on component mount
   useEffect(() => {
     const getWarehouse = async () => {
-      const backendUrl = "http://localhost:4000";
+      const backendUrl = import.meta.env.VITE_BACKEND_URL;
       let userId = localStorage.getItem("userId");
 
       if (userId && typeof userId === "string") {
@@ -67,7 +67,7 @@ const Dashboard = () => {
 
       if (!warehouseId) return;
 
-      const backendUrl = "http://localhost:4000";
+      const backendUrl = import.meta.env.VITE_BACKEND_URL;
       try {
         const cropResponse = await fetch(
           `${backendUrl}/product/getproduct/${warehouseId}/${selectedCrop}`

@@ -33,7 +33,7 @@ const Dashboard = () => {
 
   useEffect(() => {
     const fetchWarehouses = async () => {
-      const backendUrl = 'http://localhost:4000';
+      const backendUrl = import.meta.env.VITE_BACKEND_URL;
       let userId = localStorage.getItem('userId');
       if (userId) userId = userId.replace(/^"(.*)"$/, '$1');
       
@@ -56,7 +56,7 @@ const Dashboard = () => {
  
   const fetchWarehouseDetails = async (warehouseName) => {
     try {
-      const response = await fetch(`http://localhost:4000/warehouse/getwarehousebyname/${warehouseName}`, {
+      const response = await fetch(`${backendUrl}/warehouse/getwarehousebyname/${warehouseName}`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
@@ -82,7 +82,7 @@ const Dashboard = () => {
   useEffect(() => {
     const fetchSpoilageHistory = async () => {
       try {
-        const response = await fetch('http://localhost:4000/spoilage/get', {
+        const response = await fetch(`${backendUrl}/spoilage/get`, {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
@@ -154,7 +154,7 @@ const Dashboard = () => {
 
     const getAllProducts = async (warehouseId) => {
       try {
-        const response = await fetch(`http://localhost:4000/product/getallproducts/${warehouseId}`, {
+        const response = await fetch(`${backendUrl}/product/getallproducts/${warehouseId}`, {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
@@ -216,7 +216,7 @@ const Dashboard = () => {
   
   const saveSpoilageData = async (data) => {
     try {
-      const response = await fetch('http://localhost:4000/spoilage/save', {
+      const response = await fetch(`${backendUrl}/spoilage/save`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data),
