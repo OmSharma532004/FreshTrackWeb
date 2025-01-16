@@ -1,14 +1,14 @@
 // Home.js
 import React from 'react';
-import Hero from '../components/homepage/Hero'; // Ensure paths are correct based on your folder structure
-import Intro from '../components/homepage/Intro/Intro'; // Ensure paths are correct based on your folder structure
-
+import { Link } from 'react-router-dom'; 
 
 const Home = () => {
   return (
     <div className="min-h-screen bg-gray-100">
-      <Hero />
-      <Intro />
+     HomePage
+     <Link to="/auth/login">
+            <button>Register / Sign In</button>
+     </Link>
     </div>
   );
 };
