@@ -11,8 +11,8 @@ CORS(app)
 
 
 try:
-    ann_model = joblib.load('/Users/omsharma/Desktop/MinorProject/ML-3/model.pkl') 
-    scaler = joblib.load('/Users/omsharma/Desktop/MinorProject/ML-3/scaler.pkl')   
+    ann_model = joblib.load('./model.pkl') 
+    scaler = joblib.load('./scaler.pkl')   
 except FileNotFoundError as e:
     print(f"FileNotFoundError: {e}")
     raise
