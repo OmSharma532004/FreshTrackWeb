@@ -9,7 +9,6 @@ from sklearn.preprocessing import StandardScaler
 app = Flask(__name__)
 CORS(app)
 
-
 try:
     ann_model = joblib.load('./model.pkl') 
     scaler = joblib.load('./scaler.pkl')   
