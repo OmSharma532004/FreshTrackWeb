@@ -1,11 +1,11 @@
 // Home.js
 import React from 'react';
-
+import bgImage from "./bg.jpg"
 import { Link } from 'react-router-dom'; 
 
 const Home = () => {
   return (
-    <div className="bg-cover bg-center min-h-screen text-white flex flex-col items-center py-10" >
+    <div className="bg-cover bg-center min-h-screen text-white flex flex-col items-center py-10  " style={{ backgroundImage: `url(${bgImage})` }} >
       {/* Homepage Section */}
       <section className="bg-black flex-col items-center justify-center bg-opacity-70 w-full max-w-6xl p-10 rounded-lg text-center mb-10">
         <h1 className="text-4xl md:text-5xl font-bold text-yellow-500 mb-5">Welcome to Crop Chain</h1>
